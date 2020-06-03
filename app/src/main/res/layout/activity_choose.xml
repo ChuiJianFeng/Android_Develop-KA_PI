@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Choose">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FFFAF4"
+        android:gravity="center"
+        android:text="你是...?"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/bt_1"
+        android:background="@drawable/coffee1"
+        android:drawableTop="@drawable/bg_1"
+        android:text="咖啡獵人"
+        android:textAllCaps="false"
+        android:textColor="#844200"
+        android:textSize="20sp"></Button>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/bt_2"
+        android:drawableTop="@drawable/bg_2"
+        android:background="@drawable/coffee2"
+        android:text="烘培師"
+        android:textColor="#844200"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        ></Button>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/bt_3"
+        android:background="@drawable/coffee3"
+        android:drawableTop="@drawable/bg_3"
+        android:text="咖啡師"
+        android:textColor="#844200"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        ></Button>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="咖啡教室"
+        android:textSize="15dp"
+        android:gravity="right"
+        ></TextView>
+
+</LinearLayout>
