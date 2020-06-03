@@ -2,6 +2,7 @@ package com.example.KA_PI_2;
 
 import android.animation.ArgbEvaluator;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -18,21 +19,38 @@ public class MainActivity extends AppCompatActivity {
     List<Model> models;
     Integer[] colors = null;
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
+    Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        bundle = this.getIntent().getExtras();
+        String carrier = bundle.getString("bt");
+        int id = bundle.getInt("id");
+
         btback = findViewById(R.id.btback);
-
+        //判斷要哪個button 要加入那些資料
         models = new ArrayList<>();
-        models.add(new Model(R.drawable.american, "Americam", "義式咖啡最重要的就是濃縮咖啡（Espresso）。Espresso來自義大利語，為「快速」之意，原理是熱水透過機器幫浦加壓，以8~9個大氣壓裡將熱水推進填壓密實的咖啡粉之中，在短時間內所萃取出的咖啡精華。上頭則覆蓋了一層醇厚、紅赭色的細緻泡沫「Crema」。\n" +
-                "因為是濃縮咖啡，所以咖啡的各種味道也會被放大，表現出咖啡的精髓。而以Espresso為基底則又衍生出各種花式咖啡，讓人為之著迷。"));
-        models.add(new Model(R.drawable.latte, "Latte", "Sticker is a type of label: a piece of printed paper, plastic, vinyl, or other material with pressure sensitive adhesive on one side"));
-        models.add(new Model(R.drawable.capuccino, "Capuccino", "Poster is any piece of printed paper designed to be attached to a wall or vertical surface."));
-        models.add(new Model(R.drawable.expresso, "Expresso", "Business cards are cards bearing business information about a company or individual."));
+        if(carrier.equals("coffeehunter")) {
+            models.add(new Model(R.drawable.american, "American", "義式咖啡最重要的就是濃縮咖啡（Espresso）。Espresso來自義大利語，為「快速」之意，原理是熱水透過機器幫浦加壓，以8~9個大氣壓裡將熱水推進填壓密實的咖啡粉之中，在短時間內所萃取出的咖啡精華。上頭則覆蓋了一層醇厚、紅赭色的細緻泡沫「Crema」。\n" +
+                    "因為是濃縮咖啡，所以咖啡的各種味道也會被放大，表現出咖啡的精髓。而以Espresso為基底則又衍生出各種花式咖啡，讓人為之著迷。"));
+            models.add(new Model(R.drawable.latte, "Latte", "Sticker is a type of label: a piece of printed paper, plastic, vinyl, or other material with pressure sensitive adhesive on one side"));
+            models.add(new Model(R.drawable.capuccino, "Capuccino", "Poster is any piece of printed paper designed to be attached to a wall or vertical surface."));
+            models.add(new Model(R.drawable.expresso, "Expresso", "Business cards are cards bearing business information about a company or individual."));
+        }else if(carrier.equals("cook")){
+            models.add(new Model(R.drawable.american, "American", "fuck"));
+            models.add(new Model(R.drawable.latte, "Latte", "Sticker is a type of label: a piece of printed paper, plastic, vinyl, or other material with pressure sensitive adhesive on one side"));
+            models.add(new Model(R.drawable.capuccino, "Capuccino", "Poster is any piece of printed paper designed to be attached to a wall or vertical surface."));
+            models.add(new Model(R.drawable.expresso, "Expresso", "Business cards are cards bearing business information about a company or individual."));
+        }else{
+            models.add(new Model(R.drawable.american, "American", "oh ya"));
+            models.add(new Model(R.drawable.latte, "Latte", "Sticker is a type of label: a piece of printed paper, plastic, vinyl, or other material with pressure sensitive adhesive on one side"));
+            models.add(new Model(R.drawable.capuccino, "Capuccino", "Poster is any piece of printed paper designed to be attached to a wall or vertical surface."));
+            models.add(new Model(R.drawable.expresso, "Expresso", "Business cards are cards bearing business information about a company or individual."));
 
+        }
         adapter = new Adapter(models, this);
 
         viewPager = findViewById(R.id.viewPager);
