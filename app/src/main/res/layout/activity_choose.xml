@@ -55,6 +55,16 @@
         android:textAllCaps="false"
         android:textSize="20sp"
         ></Button>
+    <Button
+        android:id="@+id/bt_4"
+        android:background="@color/cardview_dark_background"
+        android:text="沖煮記錄圖"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ></Button>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

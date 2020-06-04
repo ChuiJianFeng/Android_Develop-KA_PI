@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Choose extends AppCompatActivity {
 
-    Button bt_1,bt_2,bt_3;
+    Button bt_1,bt_2,bt_3,bt_4;
     Bundle bundle ;
 
     @Override
@@ -20,7 +20,7 @@ public class Choose extends AppCompatActivity {
         bt_1 = findViewById(R.id.bt_1);
         bt_2 = findViewById(R.id.bt_2);
         bt_3 = findViewById(R.id.bt_3);
-
+        bt_4 = findViewById(R.id.bt_4);
         bt_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,6 +48,7 @@ public class Choose extends AppCompatActivity {
                 startActivity(it);
             }
         });
+
         bt_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,6 +58,14 @@ public class Choose extends AppCompatActivity {
                 bundle.putInt("id",id);
                 Intent it = new Intent(Choose.this,MainActivity.class);
                 it.putExtras(bundle);
+                startActivity(it);
+            }
+        });
+
+        bt_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(Choose.this,Record.class);
                 startActivity(it);
             }
         });
