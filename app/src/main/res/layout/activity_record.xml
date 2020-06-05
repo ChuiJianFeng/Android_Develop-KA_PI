@@ -4,159 +4,176 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.KA_PI_2.Record"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.example.KA_PI_2.Record">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="沖泡器具"
+        android:text="@string/tool"
         android:textColor="@color/cardview_dark_background"
-        android:textSize="25sp"></TextView>
+        android:textSize="25sp"/>
 
     <Spinner
         android:id="@+id/sptool"
         android:layout_width="match_parent"
-        android:layout_height="50dp"></Spinner>
+        android:layout_height="50dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="豆名"
-        android:textSize="25sp"
-        android:textColor="@color/cardview_dark_background"></TextView>
+        android:text="@string/beanName"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="25sp"/>
 
     <Spinner
         android:id="@+id/spbean"
         android:layout_width="match_parent"
-        android:layout_height="50dp"></Spinner>
+        android:layout_height="50dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="比例"
-            android:textSize="25sp"
-            ></TextView>
+            android:text="@string/scale"
+            android:textSize="25sp"/>
+
         <TextView
-            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="研磨度"
-            android:textSize="25sp"
-            ></TextView>
+            android:layout_weight="1"
+            android:text="@string/degree"
+            android:textSize="25sp"/>
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="1:15.0"
-            android:textSize="25sp"
             android:layout_weight="1"
-            ></TextView>
+            android:text="1:15.0"
+            android:textSize="25sp"/>
 
         <EditText
             android:id="@+id/etdegree"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:inputType="number"
-            ></EditText>
+            android:inputType="number"/>
     </LinearLayout>
+
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="總時間"
-            android:textSize="25sp"
             android:layout_weight="1"
-            ></TextView>
+            android:text="@string/Total_time"
+            android:textSize="25sp" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="溫度(°C)"
-            android:textSize="25sp"
             android:layout_weight="1"
-            ></TextView>
+            android:text="@string/Temperate"
+            android:textSize="25sp" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <EditText
             android:id="@+id/ettime"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:inputType="time"
-            ></EditText>
+            android:inputType="time" />
+
         <EditText
             android:id="@+id/ettem"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:inputType="number"
-            ></EditText>
+            android:inputType="number" />
     </LinearLayout>
+
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="豆"
-            android:textSize="25sp"
             android:layout_weight="1"
-            ></TextView>
+            android:text="@string/bean"
+            android:textSize="25sp" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="水"
-            android:textSize="25sp"
             android:layout_weight="1"
-            ></TextView>
+            android:text="@string/water"
+            android:textSize="25sp" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <EditText
             android:id="@+id/etbeang"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:inputType="time"
-            ></EditText>
+            android:autofillHints="" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="g"
-            android:textSize="25sp"
-            ></TextView>
+            android:text="@string/g"
+            android:textSize="25sp" />
+
         <EditText
             android:id="@+id/etwater"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:inputType="number"
-            ></EditText>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="g"
-                android:textSize="25sp"
-                ></TextView>
+            android:inputType="number" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/g"
+            android:textSize="25sp" />
     </LinearLayout>
 
+    <Button
+        android:id="@+id/btView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View All"/>
 
+    <Button
+        android:id="@+id/btstore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="300dp"
+        android:text="@string/store"
+        android:textSize="25sp" />
 
 </LinearLayout>

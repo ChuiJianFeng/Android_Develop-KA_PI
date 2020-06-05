@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">KA_PI_2</string>
+    <string name="Total_time">總時間</string>
+    <string name="Temperate">溫度(°C)</string>
+    <string name="beanName">豆名</string>
+    <string name="scale">比例</string>
+    <string name="degree">研磨度</string>
+    <string name="tool">沖泡器具</string>
+    <string name="g">g</string>
+    <string name="store">儲存</string>
+    <string name="bean">豆</string>
+    <string name="water">水</string>
 </resources>
