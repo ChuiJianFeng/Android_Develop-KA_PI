@@ -19,7 +19,7 @@ public class Coffee_Customer {
     @Override
     public String toString() {
         return "Coffee_Customer{" +
-                "beantype='" + beang + '\'' +
+                "beang='" + beang + '\'' +
                 ", degree=" + degree +
                 ", time=" + time +
                 ", temp=" + Temperature +

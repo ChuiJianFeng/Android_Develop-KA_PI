@@ -20,7 +20,7 @@ public class Record extends AppCompatActivity implements AdapterView.OnItemSelec
     EditText etdegree, ettime, ettem, etbeang, etwater;
     Bundle bundle;
     DatabaseHelper helper;
-
+    String selectId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +45,7 @@ public class Record extends AppCompatActivity implements AdapterView.OnItemSelec
         String types[] = {"V60", "Kalita濾杯", "Batch Brewers", "聰明杯", "法式濾壓壺", "愛樂壓", "Expresso", "摩卡壺", "虹吸壺", "土耳其壺"};
         int img[] = {R.drawable.v60, R.drawable.kalita,R.drawable.brewers,R.drawable.smart,R.drawable.franch,R.drawable.lovepush,R.drawable.machine,R.drawable.moka,R.drawable.sock,R.drawable.turkey};
 
-        String beantypes[] = {"瓜地馬拉 拉米尼塔 花神 咖啡豆","mojoblend混合豆","坦桑尼亞 克里曼加羅AA咖啡豆","QualitàOro 金磚咖啡豆","衣索比亞耶加雪菲咖啡豆","台灣德文咖啡豆","哥斯大黎加 卡內特 莫札特 咖啡豆","我的咖啡豆","我的咖啡豆","我的咖啡豆","我的咖啡豆","我的咖啡豆","我的咖啡豆"};
+        final String beantypes[] = {"瓜地馬拉 拉米尼塔 花神 咖啡豆","mojoblend混合豆","坦桑尼亞 克里曼加羅AA咖啡豆","QualitàOro 金磚咖啡豆","衣索比亞耶加雪菲咖啡豆","台灣德文咖啡豆","哥斯大黎加 卡內特 莫札特 咖啡豆","我的咖啡豆","我的咖啡豆","我的咖啡豆","我的咖啡豆","我的咖啡豆","我的咖啡豆"};
 
         sptool.setOnItemSelectedListener(this);
         Spinner_Adapter spinner_adapter = new Spinner_Adapter(getApplicationContext(), img, types);
@@ -53,6 +53,18 @@ public class Record extends AppCompatActivity implements AdapterView.OnItemSelec
 
         ArrayAdapter beanadapter = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, beantypes);
         spbean.setAdapter(beanadapter);
+        spbean.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                selectId = (String) spbean.getSelectedItem();
+                Log.v("bean",selectId+"");
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         btstore.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,9 +76,8 @@ public class Record extends AppCompatActivity implements AdapterView.OnItemSelec
                 int Temperature = Integer.parseInt(ettem.getText().toString());
                 int Water = Integer.parseInt(etwater.getText().toString());
                 //bean
-
                 Coffee_Customer model = new Coffee_Customer(Beang, Degree, Time, Temperature, Water);
-                boolean a = helper.insertCoffeeRecord(model.beang, model.degree, model.time, model.Temperature, model.water);
+                boolean a = helper.insertCoffeeRecord(selectId,model.beang, model.degree, model.time, model.Temperature, model.water);
                 //lv.invalidateViews();//something
                 Toast.makeText(Record.this, model.toString(), Toast.LENGTH_SHORT).show();
                 if (a)

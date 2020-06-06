@@ -5,9 +5,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.provider.BaseColumns;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -24,6 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // TODO Auto-generated method stub
+
 //        db.execSQL(
 //                "create table if not exists CoffeeRecord " +
 //                        "(id integer primary key AUTOINCREMENT, Beang text,Degree text,Time text, Temperature text,Water text)"
@@ -31,12 +34,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String SQL_CREATE_ENTRIES =
                 "CREATE TABLE " + CONTACTS_TABLE_NAME + " (" +
                         "id" + " INTEGER PRIMARY KEY," +
-                        "Beang"+ " TEXT," +
+                        "type TEXT,"+
+                        "Beang text," +
                         "Time text,"+
                         "Temperature text,"+
                         "Water text,"+
                         "Degree" + " TEXT)";
         db.execSQL(SQL_CREATE_ENTRIES);
+
+        Log.v("asd",SQL_CREATE_ENTRIES+"");
     }
 
 
@@ -47,21 +53,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertCoffeeRecord(String beang, int degree_, int time_, int temperature_, int water_) {
+    public boolean insertCoffeeRecord(String selectId ,String beang, int degree_, int time_, int temperature_, int water_) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+
         String degree = String.valueOf(degree_);
         String time = String.valueOf(time_);
         String tempe = String.valueOf(temperature_);
         String water = String.valueOf(water_);
+
 
         contentValues.put("Beang", beang);
         contentValues.put("Degree", degree);
         contentValues.put("Time", time);
         contentValues.put("Temperature", tempe);
         contentValues.put("Water", water);
+        contentValues.put("type",selectId);
         db.insert("CoffeeRecord", null, contentValues);
-        Log.v("CC", "data inserted");
+        Log.v("CC", contentValues+" ");
         return true;
     }
 
@@ -98,12 +107,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ArrayList<String> array_list = new ArrayList<String>();
 
         //hp = new HashMap();
+
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res = db.rawQuery("select * from CoffeeRecord", null);
+        Cursor res = db.rawQuery("select * from CoffeeRecord",null );
         res.moveToFirst();
 
         while (res.isAfterLast() == false) {
-            array_list.add(res.getString(res.getColumnIndex("Beang")));
+            array_list.add(res.getString(res.getColumnIndex("type")));
             res.moveToNext();
         }
         return array_list;

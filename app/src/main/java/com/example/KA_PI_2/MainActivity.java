@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     Integer[] colors = null;
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
     Bundle bundle;
+    int img[] = {R.drawable.v60, R.drawable.kalita,R.drawable.brewers,R.drawable.smart,R.drawable.franch,R.drawable.lovepush,R.drawable.machine,R.drawable.moka,R.drawable.sock,R.drawable.turkey};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -338,7 +339,6 @@ public class MainActivity extends AppCompatActivity {
         };
 
         colors = colors_temp;
-
         btsearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
