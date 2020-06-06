@@ -41,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/scale"
+            android:textColor="#111111"
             android:textSize="25sp"/>
 
         <TextView
@@ -48,6 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/degree"
+            android:textColor="#111111"
             android:textSize="25sp"/>
 
     </LinearLayout>
@@ -61,6 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="1:15.0"
+            android:textColor="#111111"
             android:textSize="25sp"/>
 
         <EditText
@@ -81,6 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/Total_time"
+            android:textColor="#111111"
             android:textSize="25sp" />
 
         <TextView
@@ -88,6 +92,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/Temperate"
+            android:textColor="#111111"
             android:textSize="25sp" />
     </LinearLayout>
 
@@ -120,6 +125,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/bean"
+            android:textColor="#111111"
             android:textSize="25sp" />
 
         <TextView
@@ -127,6 +133,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/water"
+            android:textColor="#111111"
             android:textSize="25sp" />
     </LinearLayout>
 
@@ -146,6 +153,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/g"
+            android:textColor="#111111"
             android:textSize="25sp" />
 
         <EditText
@@ -159,6 +167,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/g"
+            android:textColor="#111111"
             android:textSize="25sp" />
     </LinearLayout>
 
@@ -166,14 +175,17 @@
         android:id="@+id/btView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="View All"/>
+        android:text="紀錄"
+        android:textColor="#111111"
+        android:textSize="20sp"
+        />
 
     <Button
         android:id="@+id/btstore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="300dp"
         android:text="@string/store"
-        android:textSize="25sp" />
+        android:textColor="#111111"
+        android:textSize="20sp" />
 
 </LinearLayout>

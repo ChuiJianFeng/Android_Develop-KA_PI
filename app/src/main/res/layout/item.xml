@@ -13,7 +13,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="500dp">
+            android:layout_height="550dp">
 
             <ImageView
                 android:id="@+id/image"
@@ -29,7 +29,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="16dp"
                 android:text="American coffee"
-                android:textSize="16sp"
+                android:textSize="24sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -39,7 +39,7 @@
                 android:layout_marginTop="3dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:maxLines="8"
+                android:textColor="#111111"
                 android:drawablePadding="12dp"
                 android:ellipsize="end"
                 android:text="Description"

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -24,6 +25,10 @@ public class Record extends AppCompatActivity implements AdapterView.OnItemSelec
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record);
+
+        getSupportActionBar().hide();
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         btstore = findViewById(R.id.btstore);
         btView = findViewById(R.id.btView);
         sptool = findViewById(R.id.sptool);
@@ -37,10 +42,10 @@ public class Record extends AppCompatActivity implements AdapterView.OnItemSelec
         helper = new DatabaseHelper(this);
         Log.v("CC", "Record");
 
-        String types[] = {"V60", "Kalita濾杯", "america"};
-        int img[] = {R.drawable.american, R.drawable.capuccino};
+        String types[] = {"V60", "Kalita濾杯", "Batch Brewers", "聰明杯", "法式濾壓壺", "愛樂壓", "Expresso", "摩卡壺", "虹吸壺", "土耳其壺"};
+        int img[] = {R.drawable.v60, R.drawable.kalita,R.drawable.brewers,R.drawable.smart,R.drawable.franch,R.drawable.lovepush,R.drawable.machine,R.drawable.moka,R.drawable.sock,R.drawable.turkey};
 
-        String beantypes[] = {"MoJo", "粉紅波旁"};
+        String beantypes[] = {"瓜地馬拉 拉米尼塔 花神 咖啡豆","mojoblend混合豆","坦桑尼亞 克里曼加羅AA咖啡豆","QualitàOro 金磚咖啡豆","衣索比亞耶加雪菲咖啡豆","台灣德文咖啡豆","哥斯大黎加 卡內特 莫札特 咖啡豆","我的咖啡豆","我的咖啡豆","我的咖啡豆","我的咖啡豆","我的咖啡豆","我的咖啡豆"};
 
         sptool.setOnItemSelectedListener(this);
         Spinner_Adapter spinner_adapter = new Spinner_Adapter(getApplicationContext(), img, types);
