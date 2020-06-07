@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.KA_PI_2.List_Data">
+    tools:context="com.example.KA_PI_2.List_Data"
+    android:background="#e4444444">
 
     <ListView
         android:id="@+id/lv"

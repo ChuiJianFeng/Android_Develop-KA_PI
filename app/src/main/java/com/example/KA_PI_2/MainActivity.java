@@ -73,7 +73,9 @@ public class MainActivity extends AppCompatActivity {
             models.add(new Model(R.drawable.reds, "紅寶石處理", getString(R.string.red) +
                     "\n"));
             models.add(new Model(R.drawable.sol, "SolkilnTM特殊處理法", getString(R.string.sol)));
-            models.add(new Model(R.drawable.suger2, "甘蔗法去咖啡因", ""));
+            models.add(new Model(R.drawable.suger2, "甘蔗法去咖啡因", "E.A是Ethyl Acetate（乙酸乙酯）的縮寫，這個成分可以溶解低咖啡因，然後我們手邊的豆子處理時的E.A是從甘蔗中萃取出來的，所以標榜純天然的做法。\n" +
+                    "\n" +
+                    "流程是先用蒸氣蒸生豆，讓生豆的孔隙張開，接著泡入乙酸乙酯溶液中萃取出咖啡因，然後將生豆取出再用蒸氣加熱一次，可以讓殘存在生豆內部的乙酸乙酯揮發，最後再次乾燥生豆就完成了。"));
         } else {
             models.add(new Model(R.drawable.american, "Americano", "美式咖啡可以說是黑咖啡的總稱。無論是法式濾壓壺或是手沖壺沖煮出的咖啡都可泛稱為美式。在義大利，美式咖啡通常就是Espresso旁邊放上一杯熱水任你添加，濃縮咖啡與水的比例視個人口味而定，大約為1:12。\n" +
                     "\n" +

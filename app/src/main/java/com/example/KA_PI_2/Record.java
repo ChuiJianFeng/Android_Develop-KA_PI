@@ -2,6 +2,7 @@ package com.example.KA_PI_2;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -76,15 +77,21 @@ public class Record extends AppCompatActivity implements AdapterView.OnItemSelec
                 int Temperature = Integer.parseInt(ettem.getText().toString());
                 int Water = Integer.parseInt(etwater.getText().toString());
                 //bean
-                Coffee_Customer model = new Coffee_Customer(Beang, Degree, Time, Temperature, Water);
-                boolean a = helper.insertCoffeeRecord(selectId,model.beang, model.degree, model.time, model.Temperature, model.water);
-                //lv.invalidateViews();//something
-                Toast.makeText(Record.this, model.toString(), Toast.LENGTH_SHORT).show();
-                if (a)
-                    Toast.makeText(Record.this, "you success", Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(Record.this, "Wrong", Toast.LENGTH_SHORT).show();
 
+                //if(TextUtils.isEmpty(Beang)){
+                 //   btstore.setEnabled(Boolean.FALSE);
+                 //   Toast.makeText(Record.this, "請輸入資料", Toast.LENGTH_SHORT).show();
+                //}else {
+
+                    Coffee_Customer model = new Coffee_Customer(Beang, Degree, Time, Temperature, Water);
+                    boolean a = helper.insertCoffeeRecord(selectId, model.beang, model.degree, model.time, model.Temperature, model.water);
+                    //lv.invalidateViews();//something
+                    Toast.makeText(Record.this, model.toString(), Toast.LENGTH_SHORT).show();
+                    if (a)
+                        Toast.makeText(Record.this, "you success", Toast.LENGTH_SHORT).show();
+                    else
+                        Toast.makeText(Record.this, "Wrong", Toast.LENGTH_SHORT).show();
+               // }
             }
         });
 

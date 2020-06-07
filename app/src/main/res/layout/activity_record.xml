@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#e4444444"
     android:orientation="vertical"
     tools:context="com.example.KA_PI_2.Record">
 
@@ -11,25 +12,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/tool"
-        android:textColor="@color/cardview_dark_background"
-        android:textSize="25sp"/>
+        android:textColor="#111111"
+        android:textSize="25sp" />
 
     <Spinner
         android:id="@+id/sptool"
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/beanName"
-        android:textColor="@color/cardview_dark_background"
-        android:textSize="25sp"/>
+        android:textColor="#111111"
+        android:textSize="25sp" />
 
     <Spinner
         android:id="@+id/spbean"
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,7 +43,7 @@
             android:layout_weight="1"
             android:text="@string/scale"
             android:textColor="#111111"
-            android:textSize="25sp"/>
+            android:textSize="25sp" />
 
         <TextView
             android:layout_width="0dp"
@@ -50,7 +51,7 @@
             android:layout_weight="1"
             android:text="@string/degree"
             android:textColor="#111111"
-            android:textSize="25sp"/>
+            android:textSize="25sp" />
 
     </LinearLayout>
 
@@ -64,14 +65,14 @@
             android:layout_weight="1"
             android:text="1:15.0"
             android:textColor="#111111"
-            android:textSize="25sp"/>
+            android:textSize="25sp" />
 
         <EditText
             android:id="@+id/etdegree"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:inputType="number"/>
+            android:inputType="number" />
     </LinearLayout>
 
     <LinearLayout
@@ -146,8 +147,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:inputType="time"
-            android:autofillHints="" />
+            android:autofillHints=""
+            android:inputType="time" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -172,15 +173,6 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="紀錄"
-        android:textColor="#111111"
-        android:textSize="20sp"
-        />
-
-    <Button
         android:id="@+id/btstore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -188,4 +180,11 @@
         android:textColor="#111111"
         android:textSize="20sp" />
 
+    <Button
+        android:id="@+id/btView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="觀看紀錄"
+        android:textColor="#111111"
+        android:textSize="20sp" />
 </LinearLayout>

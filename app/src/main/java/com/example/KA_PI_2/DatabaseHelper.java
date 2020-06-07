@@ -113,7 +113,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         res.moveToFirst();
 
         while (res.isAfterLast() == false) {
-            array_list.add(res.getString(res.getColumnIndex("type")));
+            array_list.add("咖啡豆名: "+res.getString(res.getColumnIndex("type")));
+            array_list.add("咖啡豆(g): "+res.getString(res.getColumnIndex("Beang")));
+            array_list.add("咖啡研磨度: "+res.getString(res.getColumnIndex("Degree")));
+            array_list.add("沖泡時間: "+res.getString(res.getColumnIndex("Time")));
+            array_list.add("沖泡水量: "+res.getString(res.getColumnIndex("Water")));
+            array_list.add("沖泡溫度: "+res.getString(res.getColumnIndex("Temperature")));
+
             res.moveToNext();
         }
         return array_list;
